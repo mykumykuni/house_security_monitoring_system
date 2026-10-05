@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top glass">
+      <div>
+        <h1>Security Monitor</h1>
+        <p id="uptime">Connecting…</p>
+      </div>
+      <div class="top-actions">
+        <button id="soundBtn" class="btn" type="button">Sound off</button>
+        <span id="link" class="pill pill-off">Offline</span>
+      </div>
+    </header>
+
+    <section id="banner" class="banner glass hidden" role="alert">
+      <strong id="bannerText"></strong>
+      <button id="bannerClose" class="btn" type="button">Dismiss</button>
+    </section>
+
+    <section class="grid">
+      <article class="card glass" id="cardPir">
+        <h2>Motion (PIR)</h2>
+        <p class="value" id="pir">--</p>
+      </article>
+      <article class="card glass" id="cardIr">
+        <h2>Proximity (IR)</h2>
+        <p class="value" id="ir">--</p>
+      </article>
+      <article class="card glass">
+        <h2>Objects counted</h2>
+        <p class="value" id="count">--</p>
+      </article>
+      <article class="card glass" id="cardTemp">
+        <h2>Temperature</h2>
+        <p class="value"><span id="temp">--</span><small> °C</small></p>
+      </article>
+      <article class="card glass" id="cardHum">
+        <h2>Humidity</h2>
+        <p class="value"><span id="hum">--</span><small> %</small></p>
+      </article>
+      <article class="card glass" id="cardLed">
+        <h2>Alarm LED</h2>
+        <p class="value" id="led">--</p>
+      </article>
+    </section>
+
+    <section class="log glass">
+      <div class="log-head">
+        <h2>Alerts</h2>
+        <button id="clearLog" class="btn" type="button">Clear</button>
+      </div>
+      <ul id="logList"><li class="empty">No alerts yet.</li></ul>
+    </section>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="assertive"></div>
+  <script src="app.js"></script>
+</body>
+</html>
